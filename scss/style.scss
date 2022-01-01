@@ -19,3 +19,26 @@
         background-color: white;
     }
 }
+.hand{
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1px;
+    margin: 3vw 3vw 0 3vw;
+    &__card{
+        position: relative;
+        border: 1px solid black;
+        height: 60%;
+        aspect-ratio: 0.5;
+        cursor: pointer;
+        &-name{
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: fit-content;
+            height: fit-content;
+            font-weight: 700;
+            font-style: italic;
+            color: white;
+        }
+    }
+}
