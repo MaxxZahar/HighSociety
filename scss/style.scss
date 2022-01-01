@@ -1,0 +1,21 @@
+.player{
+    width: 40%;
+    margin: 3vw auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    &__name{
+        font-size: 24px;
+        text-align: center;
+        color: white;
+        margin-left: 20%;
+    }
+    &__points-counter{
+        border-radius: 50%;
+        font-size: 20px;
+        font-weight: 700;
+        align-self: center;
+        width: 5%;
+        text-align: center;
+        background-color: white;
+    }
+}

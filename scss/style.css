@@ -1,0 +1,30 @@
+.player {
+  width: 40%;
+  margin: 3vw auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.player__name {
+  font-size: 24px;
+  text-align: center;
+  color: white;
+  margin-left: 20%;
+}
+
+.player__points-counter {
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 5%;
+  text-align: center;
+  background-color: white;
+}
+/*# sourceMappingURL=style.css.map */
