@@ -10,6 +10,9 @@ export class Deck {
             this.cards[j] = temp;
         }
     }
+    draw() {
+        return this.cards.pop();
+    }
 }
 
 class Card {
@@ -23,6 +26,10 @@ export class ItemCard extends Card {
     constructor(name, type, value) {
         super(name, type);
         this.value = value;
+    }
+    display() {
+        const field = document.querySelector('.gamefield');
+        field.insertAdjacentHTML('beforeend', `<div class="gamefield__card"><p class="gamefield__card-name">${this.name}</p><p class="gamefield__card-value">${this.value}</p></div>`)
     }
 }
 

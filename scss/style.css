@@ -1,3 +1,38 @@
+.gamefield {
+  margin-top: 3vw;
+}
+
+.gamefield__card {
+  aspect-ratio: 0.75;
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5%;
+  background-color: goldenrod;
+}
+
+.gamefield__card-name {
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.gamefield__card-value {
+  font-size: 3rem;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .player {
   width: 40%;
   margin: 3vw auto 0 auto;
