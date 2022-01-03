@@ -10,10 +10,13 @@ export class Game {
         card.display();
         if (card.status) this.stage++;
         if (this.stage > 3) return 'Game over';
-        this.players.forEach(player => {
-            player.display();
-            player.bet();
-        });
+        // this.players.forEach(player => {
+        //     player.display();
+        //     player.bet();
+        // });
+        this.players[0].display();
+        this.players[0].displayPass();
+        this.players[0].bet();
         return 0;
     }
 }

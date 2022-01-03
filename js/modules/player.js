@@ -25,6 +25,10 @@ export class Player {
             cardsInHand[i].style.backgroundColor = this.color;
         }
     }
+    displayPass() {
+        const container = document.querySelector('.wrapper');
+        container.insertAdjacentHTML('beforeend', '<div class="passbutton">Pass</div>');
+    }
     bet() {
         const cards = document.querySelectorAll('.hand__card');
         for (let i = 0; i < cards.length; i++) {
@@ -35,8 +39,13 @@ export class Player {
                 if (this.currentBetSum > Player.maxBet) {
                     this.biddingDone = true;
                     Player.maxBet = this.currentBetSum;
+                    return
                 }
             }, { 'once': true });
         }
+        const passButton = document.querySelector('.passbutton');
+        passButton.addEventListener('click', e => {
+            this.biddingDone = true;
+        }, { 'once': true });
     }
 }
