@@ -4,8 +4,17 @@ export class Game {
         this.deck = deck;
         this.stage = 0;
         this.betsDone = 0;
+        this.moveOrder = [...players];
     }
-    round() {
+    collectPlayers() {
+        this.players.map(player => player.setGame(this));
+    }
+    move() {
+        const activePlayer = this.moveOrder[0];
+        console.log(activePlayer);
+        // if (this.players.reduce((acc, player) => acc += player.biddingDone)){
+
+        // }
         const card = this.deck.draw();
         card.display();
         if (card.status) this.stage++;
@@ -14,9 +23,9 @@ export class Game {
         //     player.display();
         //     player.bet();
         // });
-        this.players[0].display();
-        this.players[0].displayPass();
-        this.players[0].bet();
+        activePlayer.display();
+        activePlayer.displayPass();
+        activePlayer.bet();
         return 0;
     }
 }

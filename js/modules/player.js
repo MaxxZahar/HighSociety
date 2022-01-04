@@ -39,13 +39,22 @@ export class Player {
                 if (this.currentBetSum > Player.maxBet) {
                     this.biddingDone = true;
                     Player.maxBet = this.currentBetSum;
-                    return
+                    this.game.moveOrder.push(this.game.moveOrder.shift());
+                    this.game.move();
                 }
             }, { 'once': true });
         }
         const passButton = document.querySelector('.passbutton');
         passButton.addEventListener('click', e => {
-            this.biddingDone = true;
+            // this.biddingDone = true;
+            const index = this.game.moveOrder.indexOf(this);
+            if (index > -1) {
+                this.game.moveOrder.splice(index, 1);
+            }
+            this.game.move();
         }, { 'once': true });
+    }
+    setGame(game) {
+        this.game = game;
     }
 }
