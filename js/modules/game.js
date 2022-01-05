@@ -28,4 +28,10 @@ export class Game {
         activePlayer.bet();
         return 0;
     }
+    static clearField() {
+        document.querySelector('.gamefield__card').remove();
+        document.querySelector('.player').remove();
+        document.querySelector('.hand').remove();
+        document.querySelector('.passbutton').remove();
+    }
 }

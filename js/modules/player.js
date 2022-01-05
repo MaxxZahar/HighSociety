@@ -1,3 +1,5 @@
+import { Game } from "./game.js";
+
 export class Player {
     constructor(name, color, cards) {
         this.name = name;
@@ -40,6 +42,7 @@ export class Player {
                     this.biddingDone = true;
                     Player.maxBet = this.currentBetSum;
                     this.game.moveOrder.push(this.game.moveOrder.shift());
+                    Game.clearField();
                     this.game.move();
                 }
             }, { 'once': true });
@@ -51,6 +54,7 @@ export class Player {
             if (index > -1) {
                 this.game.moveOrder.splice(index, 1);
             }
+            Game.clearField();
             this.game.move();
         }, { 'once': true });
     }
